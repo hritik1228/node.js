@@ -1,11 +1,5 @@
-const http = require("http");
-
 const express = require('express');
 const app = express();
-
-//  function rqListener(req, res) {
-//      console.log(req);
-//  }
 
 app.use((req, res, next) => {
     console.log('In the middleware')
@@ -19,6 +13,4 @@ app.use((req, res, next) => {
     res.send('<h1>Helllo from express!</h1>')
 });
 
-const server = http.createServer(app);
-
-server.listen(3000);
+app.listen(3000)
