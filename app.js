@@ -14,7 +14,12 @@ app.use('/add-product', (req, res, next) => {
     res.send('<form action="/product" method="POST"><input type="text" name="title"/><button type="submit">Add Product</button></form>');
 });
 
-app.use('/product', (req, res, next) => {
+// app.get- for all incoming get request it will get trigger
+// app.post- for all incoming post request it will get trigger
+// app.put,app.delete,app.patch
+
+// Now it will only execute for incomig POST request
+app.post('/product', (req, res, next) => {
     console.log(req.body)
     res.redirect('/')
 });
