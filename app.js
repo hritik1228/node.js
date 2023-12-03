@@ -8,7 +8,7 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Here the order matters
-app.use(adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes)
 
 // for handling all not found routes
