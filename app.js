@@ -6,7 +6,9 @@ const path = require('path');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
+// It will forwards the request to public static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Here the order matters
 app.use('/admin', adminRoutes);
